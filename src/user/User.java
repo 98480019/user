@@ -14,6 +14,9 @@ import java.util.ListIterator;
 import java.util.Properties;
 
 public class User implements Serializable {
+	/**
+	 * UserMessage.txt引入
+	 */
 	static Properties pro = new Properties();
 	static {
 		try {
@@ -47,6 +50,7 @@ public class User implements Serializable {
 		return username;
 	}
 
+
 	public void setUsername(String username) {
 		if (username.matches("\\w{6,}")) {
 			this.username = username;
@@ -77,7 +81,11 @@ public class User implements Serializable {
 		return "User [用户名:" + username + ", 密码:" + password + ", 注册时间:" + dateStr + "]";
 	}
 
-	// 获取注册时间;
+	/**
+	 * 获取注册时间
+	 * @param username
+	 * @return
+	 */
 	public static String getRegTime(String username) {
 		String time = "";
 		List<User> read = Users.objectInput(new File(pro.getProperty("file")));
@@ -90,7 +98,11 @@ public class User implements Serializable {
 		return time;
 	}
 
-	// 修改密码
+	/**
+	 * 修改密码
+	 * @param username
+	 * @param newPsw
+	 */
 	public static void changePsw(String username, String newPsw) {
 		List<User> read = Users.objectInput(new File(pro.getProperty("file")));
 		List<User> list = read;
@@ -105,7 +117,11 @@ public class User implements Serializable {
 		Users.objectOutput(new File(pro.getProperty("file")), list);
 	}
 
-	// 注销该用户
+	/**
+	 * 注销用户
+	 * @param username
+	 * @return
+	 */
 	public static boolean removeUser(String username) {
 		List<User> read = Users.objectInput(new File(pro.getProperty("file")));
 		List<User> list = read;

@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Properties;
 
 public class Users {
+	/**
+	 * UserMessage.txt引入
+	 */
 	static Properties pro = new Properties();
 	static {
 		try {
@@ -23,7 +26,13 @@ public class Users {
 		}
 	}
 	private Users() {}
-	// 存档~~
+
+	/**
+	 * 存档
+	 * @param f
+	 * @param list
+	 * @return
+	 */
 		public static List<User> objectOutput(File f, List<User> list) {
 			ObjectOutputStream os = null;
 			try {
@@ -44,8 +53,11 @@ public class Users {
 			return list;
 		}
 
-		// 读档~~
-		@SuppressWarnings("unchecked")
+	/**
+	 *读档
+	 * @param f
+	 * @return
+	 */
 		public static List<User> objectInput(File f) {
 			List<User> list = new ArrayList<>();
 			ObjectInputStream is = null;
@@ -69,7 +81,14 @@ public class Users {
 			}
 			return list;
 		}
-		// 登录验证方法
+
+	/**
+	 * 登录验证
+	 * @param list
+	 * @param admin
+	 * @param psw
+	 * @return
+	 */
 		public static boolean login(List<User> list, String admin, String psw) {
 			boolean res = false;
 			for (User u : list) {
@@ -83,7 +102,13 @@ public class Users {
 			return res;
 		}
 
-		// 注册方法
+	/**
+	 * 注册方法
+	 * @param list
+	 * @param admin
+	 * @param psw
+	 * @return
+	 */
 		public static boolean regiest(List<User> list, String admin, String psw) {
 			boolean res = false;
 			File f = new File(pro.getProperty("file"));
