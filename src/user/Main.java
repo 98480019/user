@@ -11,6 +11,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class Main {
+	//***
 	static Properties pro = new Properties();
 	static {
 		try {
