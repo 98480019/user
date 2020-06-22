@@ -1,5 +1,5 @@
 ********初学java小练习
-********纯JavaEE基础模拟存储登录注册操作
+********Java基础模拟存储登录注册操作
 ********使用IO流处理读写本地文件(UserMessage.txt)模拟数据库,完成登录注册功能
 
 property.properties配置文件配置用户信息(UserMessage.txt)存储位置
